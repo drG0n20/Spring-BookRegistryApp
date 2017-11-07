@@ -5,10 +5,7 @@ import com.github.drg0n20.dto.BookDTO;
 import com.github.drg0n20.dto.NewBookDTO;
 import com.github.drg0n20.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,7 @@ public class BookController {
     }
 
     @PostMapping
-    BookDTO addBook(NewBookDTO newBookDTO){
+    BookDTO addBook(@RequestBody NewBookDTO newBookDTO){
         return bookService.getBooks();
     }
 }
